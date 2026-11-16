@@ -1,0 +1,9 @@
+# Runtime dependencies (local worker, local dashboard and the Streamlit Community Cloud app).
+numpy>=2.0
+pandas>=2.2
+requests>=2.31
+fastapi>=0.110
+uvicorn>=0.29
+pydantic>=2.0
+ib_async>=2.0
+streamlit>=1.50,<2

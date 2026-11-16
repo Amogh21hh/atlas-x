@@ -1,0 +1,23 @@
+# Local state and data (never committed: account data, logs, reports, backups, databases)
+data/
+backups/
+*.db
+*.db-wal
+*.db-shm
+*.lock
+
+# Secrets
+.env
+.env.*
+!.env.example
+.streamlit/secrets.toml
+.secret_key
+
+# Python / tooling
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+.idea/
+.vscode/

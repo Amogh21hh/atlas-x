@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "atlas-api",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "uvicorn", "atlas.api:app", "--host", "127.0.0.1", "--port", "8600"],
+      "port": 8600
+    }
+  ]
+}

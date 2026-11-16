@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ATLAS X</title>
+<style>
+:root{--bg:#f6f7f9;--card:#fff;--ink:#14171c;--mute:#5f6b7a;--line:#e3e7ec;--acc:#2456d6;--ok:#13804b;--bad:#c0322b;--warn:#b26b00;--c1:#2456d6;--c2:#13804b;--c3:#b26b00;--c4:#8a3fd1;--c5:#c0322b;--c6:#0f8a99;--c7:#6b7280}
+@media (prefers-color-scheme:dark){:root{--bg:#0f1216;--card:#171b21;--ink:#e8ecf1;--mute:#93a0b0;--line:#283039;--acc:#6f97ff;--ok:#3cc283;--bad:#ff6b62;--warn:#f0a93b;--c1:#6f97ff;--c2:#3cc283;--c3:#f0a93b;--c4:#b98cff;--c5:#ff6b62;--c6:#3fc6d6;--c7:#9aa3ae}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.45 system-ui,-apple-system,Segoe UI,sans-serif}
+header{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;padding:14px 20px;border-bottom:1px solid var(--line);background:var(--card)}
+h1{font-size:17px;margin:0;letter-spacing:.04em}h2{font-size:14px;margin:0 0 10px;color:var(--mute);font-weight:600;text-transform:uppercase;letter-spacing:.05em}
+main{max-width:1240px;margin:0 auto;padding:16px;display:grid;gap:16px;grid-template-columns:repeat(12,1fr)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px;grid-column:span 12;min-width:0}
+.s6{grid-column:span 6}.s4{grid-column:span 4}.s8{grid-column:span 8}
+@media(max-width:860px){.s6,.s4,.s8{grid-column:span 12}}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.kpi b{display:block;font-size:22px;font-variant-numeric:tabular-nums}.kpi span{color:var(--mute);font-size:12px}
+table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}th,td{text-align:left;padding:6px 8px;border-bottom:1px solid var(--line);vertical-align:top}th{color:var(--mute);font-weight:600;font-size:12px}
+.scroll{overflow-x:auto}.pill{display:inline-block;padding:2px 8px;border-radius:99px;font-size:12px;font-weight:600}
+.ok{color:var(--ok)}.bad{color:var(--bad)}.warn{color:var(--warn)}.mute{color:var(--mute)}
+.pill.ok{background:color-mix(in srgb,var(--ok) 15%,transparent)}.pill.bad{background:color-mix(in srgb,var(--bad) 15%,transparent)}.pill.warn{background:color-mix(in srgb,var(--warn) 15%,transparent)}
+button{font:inherit;border:1px solid var(--line);background:var(--card);color:var(--ink);padding:7px 12px;border-radius:7px;cursor:pointer}button:hover{border-color:var(--acc)}
+button.danger{border-color:var(--bad);color:var(--bad)}button.primary{background:var(--acc);color:#fff;border-color:var(--acc)}
+input{font:inherit;padding:7px 10px;border:1px solid var(--line);border-radius:7px;background:var(--bg);color:var(--ink);width:100%}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.stack{display:grid;gap:8px}
+#login{max-width:380px;margin:12vh auto;padding:0 16px}small{color:var(--mute)}
+svg text{fill:var(--mute);font-size:11px}.legend{display:flex;flex-wrap:wrap;gap:10px;font-size:12px;color:var(--mute);margin-top:6px}.legend i{display:inline-block;width:10px;height:3px;margin-right:4px;vertical-align:middle}
+pre{white-space:pre-wrap;font-size:12px;background:var(--bg);padding:10px;border-radius:7px;max-height:300px;overflow:auto}
+.big{font-size:22px;font-weight:700}.lead{font-size:15px;line-height:1.55}
+.att{border-left:4px solid var(--line);padding:6px 10px;margin:6px 0;background:var(--bg);border-radius:6px}
+.att.urgent{border-color:var(--bad)}.att.warn,.att.action{border-color:var(--warn)}.att.info{border-color:var(--acc)}
+#tech.hidden{display:none}#tech{display:contents}
+select{font:inherit;padding:7px 10px;border:1px solid var(--line);border-radius:7px;background:var(--bg);color:var(--ink);width:100%}
+</style>
+</head>
+<body>
+<div id="login" hidden>
+  <div class="card stack">
+    <h1>ATLAS X</h1>
+    <small id="loginHint">Sign in to the investor console.</small>
+    <input id="em" type="email" placeholder="email" autocomplete="username">
+    <input id="pw" type="password" placeholder="password (12+ chars)" autocomplete="current-password">
+    <button class="primary" id="loginBtn">Sign in</button>
+    <small id="loginErr" class="bad"></small>
+  </div>
+</div>
+
+<div id="app" hidden>
+<header>
+  <div class="row"><h1>ATLAS X</h1><span id="mode" class="pill"></span><span id="brokerPill" class="pill"></span></div>
+  <div class="row"><small id="hb"></small><button id="logout">Sign out</button></div>
+</header>
+<main>
+  <section class="card"><div class="row" style="justify-content:space-between"><div><div class="mute">Status</div><div class="big" id="hStatus">…</div></div>
+    <div class="row"><button id="pauseBtn">Pause investing</button><button id="hStop" class="danger">EMERGENCY STOP</button></div></div>
+    <div id="hAttention" style="margin-top:8px"></div></section>
+  <section class="card s6"><h2>What ATLAS X does</h2><p class="lead" id="hWhat"></p></section>
+  <section class="card s6"><h2>Your money</h2><div class="kpis" id="hMoney"></div><div class="scroll" style="margin-top:10px"><table id="hHold"></table></div></section>
+  <section class="card s6"><h2>Results so far</h2><small id="hCaveat"></small><div class="scroll"><table id="hResults"></table></div></section>
+  <section class="card s6"><h2>Week by week</h2><small id="wNote"></small><div class="kpis" id="wKpis" style="margin-top:8px"></div><div class="scroll" style="max-height:300px;overflow:auto;margin-top:10px"><table id="wTable"></table></div></section>
+  <section class="card s6"><h2>Is my goal realistic?</h2>
+    <div class="row"><label class="stack"><small>Weekly goal (%)</small><input id="gGoal" type="number" min="0" max="100" step="0.1" value="30"></label><label class="stack"><small>Starting with (£)</small><input id="gStart" type="number" min="1" value="100"></label><button id="gBtn">Check</button></div>
+    <p class="lead" id="gVerdict"></p><div id="gImplied"></div><div class="scroll" style="margin-top:8px"><table id="gEvidence"></table></div>
+    <small>Evidence: real weekly prices 2014–2026 (research/exp_weekly_target.py). Past behaviour, not a forecast.</small></section>
+  <section class="card s6"><h2>Tax this year (estimate)</h2><div id="hTax"></div></section>
+  <section class="card s6"><h2>What it decided recently</h2><div class="scroll" style="max-height:320px;overflow:auto"><table id="hDecisions"></table></div></section>
+  <section class="card s6"><h2>UK gilts option</h2><p class="lead" id="gExplain"></p><div id="gState"></div></section>
+  <section class="card s6"><h2>Risks to know</h2><ul id="hRisks" class="lead" style="margin:0;padding-left:18px"></ul></section>
+  <section class="card"><h2>Your mandate</h2><small id="hMandateState"></small>
+    <div class="kpis" style="margin-top:8px">
+      <label class="stack"><small>Most ATLAS may invest (£)</small><input id="mCap" type="number" min="1"></label>
+      <label class="stack"><small>Keep as cash, never invest (£)</small><input id="mRes" type="number" min="0"></label>
+      <label class="stack"><small>Account type</small><select id="mWrap"><option value="taxable">General (taxable)</option><option value="isa">Stocks &amp; Shares ISA</option><option value="sipp">SIPP (pension)</option></select></label>
+      <label class="stack"><small>Your income-tax band (for tax estimates)</small><select id="mBand"><option value="basic">Basic</option><option value="higher">Higher</option><option value="additional">Additional</option></select></label>
+      <label class="stack"><small>Hold cash / bonds in UK gilts</small><select id="mGilt"><option value="off">Off (use funds)</option><option value="cash">Cash share in short gilts</option><option value="cash+bonds">Cash and bond share in gilts</option></select></label>
+      <label class="stack"><small>Your password</small><input id="mPw" type="password"></label>
+    </div><div class="row" style="margin-top:8px"><button class="primary" id="mSave">Approve mandate</button><small id="mMsg"></small></div></section>
+  <section class="card"><button id="techBtn">Show technical details</button></section>
+  <div id="tech" class="hidden">
+  <section class="card" id="paperBanner" style="border:2px solid var(--ok)"><div class="row" style="justify-content:space-between"><b style="font-size:18px;letter-spacing:.06em" class="ok">PAPER TRADING MODE</b><small>Locked in code: live accounts are blocked and orders are rejected.</small></div>
+    <div class="scroll" style="margin-top:10px"><table id="status"></table></div></section>
+  <section class="card"><div class="kpis" id="kpis"></div><div id="alerts" style="margin-top:10px"></div></section>
+
+  <section class="card s8"><h2>Account equity — active broker only (broker-reported)</h2><div id="eqChart"></div></section>
+  <section class="card s4"><h2>Controls</h2>
+    <div class="stack">
+      <div class="row"><button id="cycleBtn" class="primary">Run decision cycle</button><button id="forceBtn">Force rebalance</button></div>
+      <div class="row"><button id="labBtn">Re-run research lab</button><button id="dataBtn">Refresh market data</button></div>
+      <div class="row"><button id="stopBtn" class="danger">EMERGENCY STOP</button><button id="killBtn" class="danger">Engage kill switch</button></div>
+      <small>Emergency stop = kill switch + cancel all working orders at the broker. Releasing the kill switch needs your password.</small>
+      <input id="pw2" type="password" placeholder="password to confirm sensitive actions">
+      <div class="row"><button id="resumeBtn">Resume after suspension</button><button id="liqBtn" class="danger">Emergency liquidate</button></div>
+      <small id="ctlMsg"></small>
+    </div>
+  </section>
+
+  <section class="card s6"><h2>Holdings vs target</h2><div class="scroll"><table id="hold"></table></div><small id="tgtNote"></small></section>
+  <section class="card s6"><h2>Risk engine (final authority)</h2><div class="scroll"><table id="risk"></table></div></section>
+
+  <section class="card"><h2>Research lab — evidence gate</h2><span class="pill warn">BACKTEST — historical simulation, not broker results and not a forecast</span><br><small id="labNote"></small>
+    <div class="scroll"><table id="lab"></table></div><div id="labChart" style="margin-top:12px"></div></section>
+
+  <section class="card s6"><h2>Orders</h2><div class="scroll"><table id="orders"></table></div></section>
+  <section class="card s6"><h2>Events</h2><div class="scroll" style="max-height:420px;overflow:auto"><table id="events"></table></div></section>
+
+  <section class="card s6"><h2>Live trading authorisation</h2>
+    <div class="stack"><span class="pill ok" style="justify-self:start">LOCKED — paper trading only</span>
+      <small>This installation is locked to paper trading in code (<code>PAPER_ONLY = True</code>). The server refuses live authorisation, every order on a live or unverified account is rejected, and detecting a live account engages the kill switch.</small>
+      <small id="liveState"></small>
+      <input id="liveCap" type="number" placeholder="maximum capital to deploy (£)" disabled>
+      <input id="livePhrase" placeholder="type the confirmation phrase" disabled>
+      <div class="row"><button id="liveBtn" class="danger" disabled>Authorise live trading</button><button id="revokeBtn">Revoke</button></div>
+    </div>
+  </section>
+  <section class="card s6"><h2>Daily report</h2><button id="repBtn">Generate</button><pre id="rep"></pre></section>
+  </div>
+</main>
+</div>
+<script>
+const $=id=>document.getElementById(id), C=['--c1','--c2','--c3','--c4','--c5','--c6','--c7'].map(v=>getComputedStyle(document.documentElement).getPropertyValue(v).trim());
+const gbp=v=>v==null?'—':'£'+Number(v).toLocaleString('en-GB',{minimumFractionDigits:2,maximumFractionDigits:2});
+const pct=v=>v==null?'—':(v*100).toFixed(1)+'%', esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+async function api(p,opt={}){const r=await fetch(p,{headers:{'Content-Type':'application/json'},credentials:'same-origin',...opt});if(r.status===401){show(false);throw new Error('auth')}const j=await r.json().catch(()=>({}));if(!r.ok)throw new Error(j.detail||r.statusText);return j}
+const post=(p,b={})=>api(p,{method:'POST',body:JSON.stringify(b)});
+function show(app){$('app').hidden=!app;$('login').hidden=app}
+function line(el,series,{h=220,fmt=v=>v.toFixed(2)}={}){const W=Math.max(320,el.clientWidth||600),P=64;const all=series.flatMap(s=>s.pts);if(!all.length){el.innerHTML='<small>No data yet.</small>';return}
+ const xs=all.map(p=>+new Date(p[0])),ys=all.map(p=>p[1]),x0=Math.min(...xs),x1=Math.max(...xs)||x0+1,y0=Math.min(...ys),y1=Math.max(...ys);const sx=x=>P+(x-x0)/(x1-x0||1)*(W-P-8),sy=y=>8+(1-(y-y0)/((y1-y0)||1))*(h-28);
+ let g='';for(let i=0;i<=3;i++){const v=y0+(y1-y0)*i/3;g+=`<line x1="${P}" x2="${W-8}" y1="${sy(v)}" y2="${sy(v)}" stroke="currentColor" opacity=".08"/><text x="2" y="${sy(v)+4}">${fmt(v)}</text>`}
+ g+=`<text x="${P}" y="${h-4}">${new Date(x0).toISOString().slice(0,10)}</text><text x="${W-80}" y="${h-4}">${new Date(x1).toISOString().slice(0,10)}</text>`;
+ series.forEach((s,i)=>{g+=`<polyline fill="none" stroke="${s.color||C[i%C.length]}" stroke-width="${s.w||1.6}" points="${s.pts.map(p=>sx(+new Date(p[0]))+','+sy(p[1])).join(' ')}"/>`});
+ el.innerHTML=`<svg width="100%" viewBox="0 0 ${W} ${h}" role="img">${g}</svg>`+(series.length>1?`<div class="legend">${series.map((s,i)=>`<span><i style="background:${s.color||C[i%C.length]}"></i>${esc(s.name)}</span>`).join('')}</div>`:'')}
+async function loadHome(){
+ const h=await api('/api/home');
+ $('hStatus').textContent=h.status+(h.mode==='paper'?' · paper (simulated) money':' · LIVE');$('hStatus').className='big '+(h.status.startsWith('Needs')?'bad':h.status.startsWith('Running —')?'warn':'ok');
+ $('hAttention').innerHTML=h.attention.length?h.attention.map(a=>`<div class="att ${a.level}"><b>${esc(a.what)}</b><br><small>What to do: ${esc(a.todo)}</small></div>`).join(''):'<small>Nothing needs you right now.</small>';
+ $('hWhat').textContent=h.what_it_does;
+ const m=h.money;$('hMoney').innerHTML=[['Account value',gbp(m.account_value)],['Invested by ATLAS',gbp(m.invested)],['Cash at broker',gbp(m.cash_at_broker)],['ATLAS may invest',gbp(m.atlas_may_invest)]].map(([k,v])=>`<div class="kpi"><span>${k}</span><b>${v}</b></div>`).join('');
+ $('hHold').innerHTML='<tr><th>Fund</th><th>Value</th><th>Share</th></tr>'+(m.holdings.map(x=>`<tr><td>${esc(x.fund)}</td><td>${gbp(x.value)}</td><td>${pct(x.share)}</td></tr>`).join('')||'<tr><td colspan=3><small>Nothing invested yet.</small></td></tr>');
+ const r=h.results||{};$('hCaveat').textContent=r.caveat||r.status||'';
+ $('hResults').innerHTML=r.rows?'<tr><th>Option</th><th>Return since '+esc((r.since||'').slice(0,10))+'</th></tr>'+r.rows.map((x,i)=>`<tr><td>${i?esc(x.name):'<b>'+esc(x.name)+'</b>'}</td><td>${x.return==null?'—':pct(x.return)}</td></tr>`).join('')+`<tr><td>Trading costs paid</td><td>${gbp(r.commissions_paid)}</td></tr>`:'';
+ const tx=h.tax;$('hTax').innerHTML=!tx?'<small>Approve a mandate to see tax estimates.</small>':tx.sheltered?`<p class="lead">This is a <b>${tx.wrapper.toUpperCase()}</b>: no tax on gains or income.${tx.isa_allowance_left!=null?' ISA allowance left this tax year (deposits ATLAS has detected): <b>'+gbp(tx.isa_allowance_left)+'</b>.':''}</p>`:
+  `<table><tr><td>Tax year</td><td>${tx.tax_year}</td></tr><tr><td>Gains realised by selling</td><td>${gbp(tx.net_realised_gain)}</td></tr><tr><td>Tax-free gains allowance left</td><td>${gbp(tx.cgt_allowance_left)}</td></tr><tr><td>Estimated dividends / interest</td><td>${gbp(tx.estimated_dividends)} / ${gbp(tx.estimated_interest)}</td></tr><tr><td><b>Estimated tax</b></td><td><b>${gbp(tx.estimated_tax.total)}</b></td></tr></table><small>${esc(tx.note)} An ISA would make this £0.</small>`;
+ $('hDecisions').innerHTML=h.decisions.map(d=>`<tr><td><small>${esc(d.when)}</small></td><td><b>${esc(d.what)}</b><br><small>${esc(d.detail)}</small></td></tr>`).join('')||'<tr><td><small>No decisions yet.</small></td></tr>';
+ $('hRisks').innerHTML=h.risks.map(x=>`<li>${esc(x)}</li>`).join('');
+ const md=h.mandate||{};$('hMandateState').textContent=md.approved?`Approved by ${md.approved_by} on ${(md.approved_at||'').slice(0,10)}. Changing it needs your password.`:(md.provisional?'Provisional paper mandate in use (£10,000). Review and approve your own.':'No mandate approved: ATLAS will not invest.');
+ if(document.activeElement.tagName!=='INPUT'&&document.activeElement.tagName!=='SELECT'){$('mCap').value=md.capital_limit_gbp??'';$('mRes').value=md.cash_reserve_gbp??0;$('mWrap').value=md.wrapper||'taxable';$('mBand').value=md.tax_band||'higher';$('mGilt').value=md.gilt_sleeve||'off'}
+ const gi=h.gilts||{};$('gExplain').textContent=gi.explain||'';
+ const lp=gi.last_plan;$('gState').innerHTML=(gi.verified?`<span class="pill ok">IBKR gilt trading verified ${esc((gi.verified.at||'').slice(0,10))}</span>`:'<span class="pill warn">Not yet verified on IBKR — the option stays inactive until <code>gilt-check</code> passes</span>')+
+  ` <span class="pill">${md.gilt_sleeve&&md.gilt_sleeve!=='off'?'You have turned it on ('+esc(md.gilt_sleeve)+')':'Off in your mandate'}</span>`+
+  (lp?lp.sleeves.map(s=>`<p><b>${s.purpose==='cash'?'Cash share':'Bond share'}</b>: target ${gbp(s.target_gbp)}, held ${gbp(s.held_gbp)}. Best after-tax for you (${esc(lp.band)}): `+s.picks.map(x=>`${esc(x.name)} ${pct(x.after_tax_yield)}`).join('; ')+'</p>').join(''):'');
+ $('pauseBtn').textContent=md.paused?'Resume investing':'Pause investing';$('pauseBtn').dataset.p=md.paused?'0':'1';
+ await loadWeekly();
+}
+async function loadWeekly(){
+ const g=Math.max(0,+$('gGoal').value||0)/100,st=Math.max(1,+$('gStart').value||100);
+ const r=await api(`/api/weekly?goal=${g}&start=${st}`);const w=r.weekly,G=r.goal;
+ $('wNote').textContent=(r.mode==='paper'?'Paper (simulated) money. ':'')+'Profit or loss each week (Mon–Sun), not counting your own deposits. Fees are already included in the profit figure.';
+ $('wKpis').innerHTML=[['Total profit / loss',gbp(w.total_pnl)],['Total return',w.cumulative_return==null?'—':pct(w.cumulative_return)],['Average week',w.avg_weekly_return==null?'—':pct(w.avg_weekly_return)],['Fees paid',gbp(w.total_fees)]].map(([k,v])=>`<div class="kpi"><span>${k}</span><b>${v}</b></div>`).join('');
+ $('wTable').innerHTML='<tr><th>Week of</th><th>Start</th><th>Deposits</th><th>End</th><th>Profit / loss</th><th>Fees</th><th>Return</th></tr>'+(w.weeks.slice().reverse().map(x=>`<tr><td>${esc(x.week_of)}</td><td>${gbp(x.start)}</td><td>${gbp(x.deposits)}</td><td>${gbp(x.end)}</td><td class="${x.pnl<0?'bad':'ok'}">${gbp(x.pnl)}</td><td>${gbp(x.fees)}</td><td>${x.return==null?'—':pct(x.return)}</td></tr>`).join('')||'<tr><td colspan=7><small>No full weeks yet.</small></td></tr>');
+ $('gVerdict').innerHTML='<b>'+esc(G.verdict)+'</b>';
+ const ia=G.if_achieved;$('gImplied').innerHTML=`<small>If ${pct(G.goal_weekly)} a week were achieved, ${gbp(G.start_gbp)} would become: 4 weeks ${gbp(ia['4_weeks'])} · 12 weeks ${gbp(ia['12_weeks'])} · 6 months ${gbp(ia['26_weeks'])} · 1 year ${gbp(ia['52_weeks'])}.`+(G.atlas_long_run_weekly!=null?` ATLAS's 60/40 mix has averaged about <b>${G.atlas_long_run_weekly.toFixed(2)}% a week</b> (roughly 6–8% a year).`:'')+'</small>';
+ $('gEvidence').innerHTML=G.evidence?'<tr><th>Asset</th><th>Weeks ≥30%</th><th>Best week</th><th>Worst week</th><th>Most ≥30% weeks in a row</th></tr>'+G.evidence.map(e=>`<tr><td>${esc(e.name)}</td><td>${e.pct_weeks_ge_goal}%</td><td class="ok">+${e.best_week}%</td><td class="bad">${e.worst_week}%</td><td>${e.longest_run}</td></tr>`).join(''):'<tr><td><small>Run research/exp_weekly_target.py to load evidence.</small></td></tr>';
+}
+async function load(){
+ await loadHome();
+ const o=await api('/api/overview');show(true);
+ const live=o.broker&&o.broker.live;const acctType=live===false?'PAPER':live===true?'LIVE — BLOCKED':'UNVERIFIED — BLOCKED';
+ $('mode').textContent=live===false?'PAPER':'TRADING BLOCKED';$('mode').className='pill '+(live===false?'ok':'bad');
+ const rc=o.last_reconcile,rok=o.last_reconcile_ok,pend=o.pending_orders||[],rs=o.risk;
+ $('status').innerHTML=[['Broker',esc(o.broker_name)+(o.broker_name==='paper'?' (internal simulator, real prices)':' (Interactive Brokers)')],
+  ['IBKR connection status',o.broker_name==='ibkr'?(o.broker.ok?'<span class="ok">CONNECTED</span>':'<span class="bad">DISCONNECTED</span> '+esc(o.broker.error||'')):'<span class="mute">not in use</span>'],
+  ['Account',esc(o.broker.account||'—')],['Account type',`<b class="${live===false?'ok':'bad'}">${acctType}</b>`],
+  ['Available GBP cash',gbp((o.snapshot||{}).cash)],['Portfolio equity',gbp((o.snapshot||{}).equity)],
+  ['Open positions',Object.keys(o.positions).length],['Pending orders',pend.length?`<span class="warn">${pend.length}: ${pend.map(p=>`#${p.id} ${p.side} ${p.qty} ${p.symbol} (${p.status})`).join(', ')}</span>`:'none'],
+  ['Last successful broker reconciliation',rok?esc(rok.at.replace('T',' ').slice(0,19))+' UTC':'<span class="warn">never</span>'+(rc&&!rc.ok?' (last attempt failed)':'')],
+  ['Risk engine',rs.kill_switch?'<span class="bad">HALTED (kill switch)</span>':rs.suspended?'<span class="warn">SUSPENDED — '+esc(rs.suspended)+'</span>':'<span class="ok">ACTIVE — all limits enforced</span>'],
+  ['Kill switch',rs.kill_switch?'<span class="bad">ENGAGED</span>':'released']].map(([k,v])=>`<tr><td style="width:40%">${k}</td><td>${v}</td></tr>`).join('');
+ $('brokerPill').textContent=(o.broker.broker||'broker')+(o.broker.ok?' connected':' DOWN');$('brokerPill').className='pill '+(o.broker.ok?'ok':'bad');
+ $('hb').textContent='worker heartbeat: '+(o.heartbeat?new Date(o.heartbeat).toLocaleString():'never — start the worker');
+ const p=o.performance||{},s=o.snapshot||{};
+ $('kpis').innerHTML=[['Equity',gbp(s.equity)],['Cash',gbp(s.cash)],['Return (broker-confirmed)',p.funded===false?'— (unfunded)':pct(p.return)],['Max drawdown (broker-confirmed)',p.funded===false?'—':pct(p.max_dd)],['Active strategy',esc(o.selection.name)],['Commissions',gbp(p.commissions_paid)]].map(([k,v])=>`<div class="kpi"><span>${k}</span><b>${v}</b></div>`).join('');
+ const r=o.risk,al=[];if(r.kill_switch)al.push('<span class="pill bad">KILL SWITCH ENGAGED — all trading halted</span>');if(r.suspended)al.push(`<span class="pill warn">SUSPENDED: ${esc(r.suspended)}</span>`);
+ const stale=Object.entries(o.data.stale).filter(([k,v])=>v>o.limits.max_data_staleness_days);if(stale.length)al.push(`<span class="pill warn">stale prices: ${stale.map(x=>x[0]).join(', ')}</span>`);$('alerts').innerHTML=al.join(' ');
+ $('killBtn').textContent=r.kill_switch?'Release kill switch':'Engage kill switch';$('killBtn').dataset.on=r.kill_switch?'0':'1';
+ const tw=(o.target&&o.target.weights)||{},eq=s.equity||0,syms=Object.keys(o.universe);
+ $('hold').innerHTML='<tr><th>ETF</th><th>Qty</th><th>Value</th><th>Weight</th><th>Target</th><th>Unrealised P&L</th></tr>'+syms.map(k=>{const ps=o.positions[k]||{},w=eq?(ps.value||0)/eq:0,pn=(o.attribution.by_position[k]||{}).unrealised_pnl;return `<tr><td>${k}<br><small>${esc(o.universe[k].name)}</small></td><td>${ps.qty??0}</td><td>${gbp(ps.value||0)}</td><td>${pct(w)}</td><td>${pct(tw[k]||0)}</td><td class="${pn>0?'ok':pn<0?'bad':''}">${pn==null?'—':gbp(pn)}</td></tr>`}).join('');
+ $('tgtNote').textContent=o.target?`Target from ${o.target.strategy}, prices as of ${o.target.asof}. ${o.selection.rationale||''}`:'';
+ const L=o.limits;$('risk').innerHTML=[['Kill switch',r.kill_switch?'<span class="bad">ON</span>':'off'],['Suspension',r.suspended?`<span class="warn">${esc(r.suspended)}</span>`:'none'],['Live authorisation',r.live_authorised?`<span class="bad">yes — cap ${gbp(r.live_authorised.max_capital_gbp)}</span>`:'none (paper only)'],['Peak equity',gbp(r.peak_equity)],['Turnover today',gbp(r.day_turnover)],['Position caps (per ETF)',Object.entries(o.universe).filter(([k,u])=>u.cls!=='cash').map(([k,u])=>k.replace('.L','')+' '+pct(u.max_w)).join(', ')],['Max gross exposure',L.max_gross_exposure+'x (no leverage)'],['Max single order',pct(L.max_order_fraction)+' of equity'],['Daily loss limit',pct(-L.daily_loss_limit)],['Drawdown breaker',pct(-L.max_drawdown)],['Short selling',L.allow_short?'allowed':'prohibited'],['Data staleness limit',L.max_data_staleness_days+' business days']].map(([k,v])=>`<tr><td>${k}</td><td>${v}</td></tr>`).join('');
+ $('liveState').innerHTML=r.live_authorised?`<span class="bad">A stored authorisation exists but is ignored by the paper-only lock. Revoke it.</span>`:'Not authorised.';
+ const e=await api('/api/equity');line($('eqChart'),[{name:'equity',pts:e.map(x=>[x.ts,x.equity]),w:2}],{fmt:v=>'£'+Math.round(v).toLocaleString('en-GB')});
+ const lab=await api('/api/research');$('labNote').textContent=lab.run_at?`Last run ${lab.run_at}. Out-of-sample starts ${lab.strategies[0]?.metrics.split}. Gate: OOS Sharpe ≥ ${lab.gate.oos_sharpe_min}, deflated Sharpe ≥ ${lab.gate.dsr_min}, OOS max DD ≥ ${pct(lab.gate.oos_max_dd)}, ≥${pct(lab.gate.robust_min)} of parameter grid profitable, active strategies must beat passive. Returns are net of costs.`:'Lab has not run.';
+ $('lab').innerHTML='<tr><th>Strategy</th><th>Params</th><th>CAGR</th><th>OOS Sharpe</th><th>OOS CAGR</th><th>OOS max DD</th><th>DSR</th><th>Turnover/yr</th><th>Verdict</th></tr>'+lab.strategies.map(x=>{const m=x.metrics;return `<tr><td>${esc(x.name)}${x.name===lab.selection.name?' <span class="pill ok">selected</span>':''}</td><td><small>${esc(JSON.stringify(x.params))}</small></td><td>${pct(m.full.cagr)}</td><td>${m.oos.sharpe.toFixed(2)}</td><td>${pct(m.oos.cagr)}</td><td>${pct(m.oos.max_dd)}</td><td>${m.dsr.toFixed(2)}</td><td>${(m.full.turnover_ann||0).toFixed(1)}x</td><td>${x.passed?'<span class="pill ok">pass</span>':'<span class="pill bad">reject</span><br><small>'+x.reasons.map(esc).join('<br>')+'</small>'}</td></tr>`}).join('');
+ line($('labChart'),lab.strategies.map(x=>({name:x.name,pts:x.equity})),{h:260,fmt:v=>v.toFixed(1)+'x'});
+ const od=await api('/api/orders');$('orders').innerHTML='<tr><th>Time</th><th>Broker</th><th>Side</th><th>Qty</th><th>ETF</th><th>Status</th><th>Fill</th></tr>'+(od.map(x=>`<tr><td><small>${esc(x.created_at.slice(0,16))}</small></td><td><small>${x.broker==='paper'?'simulator':esc(x.broker)}</small></td><td>${x.side}</td><td>${x.qty}</td><td>${x.symbol}</td><td class="${x.status==='filled'?'ok':'warn'}">${x.status}</td><td>${x.avg_fill_price?gbp(x.avg_fill_price):'—'}</td></tr>`).join('')||'<tr><td colspan=7><small>No orders yet.</small></td></tr>');
+ const ev=await api('/api/events');$('events').innerHTML=ev.map(x=>`<tr><td><small>${esc(x.ts.slice(5,16))}</small></td><td class="${x.level==='critical'?'bad':x.level==='warn'?'warn':'mute'}">${x.kind}</td><td>${esc(x.message)}</td></tr>`).join('');
+}
+async function act(fn,msg){$('ctlMsg').textContent='working…';try{const r=await fn();$('ctlMsg').textContent=msg||'done';await load();return r}catch(e){$('ctlMsg').textContent='error: '+e.message}}
+$('gBtn').onclick=()=>loadWeekly().catch(e=>$('gVerdict').textContent='error: '+e.message);
+$('cycleBtn').onclick=()=>act(()=>post('/api/cycle',{}),'cycle complete');
+$('forceBtn').onclick=()=>act(()=>post('/api/cycle',{force:true,ignore_hours:$('mode').textContent==='PAPER'}),'forced rebalance cycle complete');
+$('labBtn').onclick=()=>act(()=>post('/api/research/run'),'research lab re-run (takes ~1–2 min)');
+$('dataBtn').onclick=()=>act(()=>post('/api/data/refresh'),'market data refreshed');
+$('killBtn').onclick=()=>act(()=>post('/api/kill',{on:$('killBtn').dataset.on==='1',password:$('pw2').value}));
+$('stopBtn').onclick=()=>{if(confirm('Halt all trading and cancel every working order at the broker?'))act(()=>post('/api/emergency-stop'),'EMERGENCY STOP done')};
+$('resumeBtn').onclick=()=>act(()=>post('/api/resume',{password:$('pw2').value}),'resumed');
+$('liqBtn').onclick=()=>{if(confirm('Sell all risky holdings at the next cycle?'))act(()=>post('/api/liquidate',{password:$('pw2').value}),'liquidation queued for next cycle')};
+$('liveBtn').onclick=()=>act(()=>post('/api/live/authorise',{password:$('pw2').value,phrase:$('livePhrase').value,max_capital_gbp:+$('liveCap').value}),'live trading authorised');
+$('revokeBtn').onclick=()=>act(()=>post('/api/live/revoke'),'revoked');
+$('techBtn').onclick=()=>{const h=$('tech').classList.toggle('hidden');$('techBtn').textContent=h?'Show technical details':'Hide technical details'};
+$('pauseBtn').onclick=()=>post('/api/pause',{paused:$('pauseBtn').dataset.p==='1'}).then(load);
+$('hStop').onclick=()=>{if(confirm('Halt all trading and cancel every working order at the broker?'))post('/api/emergency-stop').then(load)};
+$('mSave').onclick=async()=>{$('mMsg').textContent='';try{await post('/api/mandate',{password:$('mPw').value,capital_limit_gbp:+$('mCap').value,cash_reserve_gbp:+$('mRes').value,wrapper:$('mWrap').value,tax_band:$('mBand').value,gilt_sleeve:$('mGilt').value});$('mPw').value='';$('mMsg').textContent='Mandate approved.';load()}catch(e){$('mMsg').textContent='Not saved: '+e.message}};
+$('repBtn').onclick=async()=>{$('rep').textContent=(await api('/api/report')).markdown};
+$('logout').onclick=async()=>{await post('/api/logout');show(false)};
+let setupMode=false;
+$('loginBtn').onclick=async()=>{$('loginErr').textContent='';try{await post(setupMode?'/api/setup':'/api/login',{email:$('em').value,password:$('pw').value});await load()}catch(e){$('loginErr').textContent=e.message}};
+(async()=>{const h=await (await fetch('/api/health')).json();setupMode=!h.users;if(setupMode){$('loginHint').textContent='First run: create the investor account.';$('loginBtn').textContent='Create account'}
+ try{await load()}catch(e){show(false)} setInterval(()=>{if(!$('app').hidden)load().catch(()=>{})},60000)})();
+</script>
+</body>
+</html>

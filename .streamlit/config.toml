@@ -1,0 +1,19 @@
+[server]
+headless = true
+runOnSave = false
+maxUploadSize = 1
+
+[browser]
+gatherUsageStats = false
+
+[runner]
+# Bare expressions are never written to the page.
+magicEnabled = false
+
+[client]
+toolbarMode = "viewer"
+showErrorDetails = "none"
+
+[theme]
+base = "dark"
+primaryColor = "#d64545"

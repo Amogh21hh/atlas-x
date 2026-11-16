@@ -1,0 +1,208 @@
+{
+  "target_weekly": 0.3,
+  "assets": {
+    "VWRL.L": {
+      "name": "Vanguard FTSE All-World",
+      "weeks": 755,
+      "from": "2012-06-01",
+      "to": "2026-11-13",
+      "pct_weeks_ge_30": 0.0,
+      "best_week_pct": 8.7,
+      "worst_week_pct": -10.7,
+      "median_week_pct": 0.3,
+      "longest_run_of_30pct_weeks": 0,
+      "avg_week_compounded_pct": 0.23
+    },
+    "VUSA.L": {
+      "name": "Vanguard S&P 500",
+      "weeks": 755,
+      "from": "2012-06-01",
+      "to": "2026-11-13",
+      "pct_weeks_ge_30": 0.0,
+      "best_week_pct": 10.1,
+      "worst_week_pct": -11.5,
+      "median_week_pct": 0.29,
+      "longest_run_of_30pct_weeks": 0,
+      "avg_week_compounded_pct": 0.28
+    },
+    "VUKE.L": {
+      "name": "Vanguard FTSE 100",
+      "weeks": 755,
+      "from": "2012-06-01",
+      "to": "2026-11-13",
+      "pct_weeks_ge_30": 0.0,
+      "best_week_pct": 8.0,
+      "worst_week_pct": -17.1,
+      "median_week_pct": 0.26,
+      "longest_run_of_30pct_weeks": 0,
+      "avg_week_compounded_pct": 0.16
+    },
+    "EMIM.L": {
+      "name": "iShares Core MSCI EM IMI",
+      "weeks": 648,
+      "from": "2014-06-20",
+      "to": "2026-11-13",
+      "pct_weeks_ge_30": 0.0,
+      "best_week_pct": 8.0,
+      "worst_week_pct": -8.6,
+      "median_week_pct": 0.15,
+      "longest_run_of_30pct_weeks": 0,
+      "avg_week_compounded_pct": 0.14
+    },
+    "IUKP.L": {
+      "name": "iShares UK Property",
+      "weeks": 932,
+      "from": "2009-01-09",
+      "to": "2026-11-13",
+      "pct_weeks_ge_30": 0.0,
+      "best_week_pct": 15.5,
+      "worst_week_pct": -16.8,
+      "median_week_pct": 0.1,
+      "longest_run_of_30pct_weeks": 0,
+      "avg_week_compounded_pct": 0.02
+    },
+    "IGLT.L": {
+      "name": "iShares Core UK Gilts",
+      "weeks": 984,
+      "from": "2008-01-11",
+      "to": "2026-11-13",
+      "pct_weeks_ge_30": 0.0,
+      "best_week_pct": 5.6,
+      "worst_week_pct": -5.8,
+      "median_week_pct": 0.05,
+      "longest_run_of_30pct_weeks": 0,
+      "avg_week_compounded_pct": 0.03
+    },
+    "INXG.L": {
+      "name": "iShares UK Index-Linked Gilts",
+      "weeks": 984,
+      "from": "2008-01-11",
+      "to": "2026-11-13",
+      "pct_weeks_ge_30": 0.0,
+      "best_week_pct": 19.3,
+      "worst_week_pct": -13.0,
+      "median_week_pct": 0.1,
+      "longest_run_of_30pct_weeks": 0,
+      "avg_week_compounded_pct": 0.03
+    },
+    "SLXX.L": {
+      "name": "iShares Core GBP Corp Bond",
+      "weeks": 984,
+      "from": "2008-01-11",
+      "to": "2026-11-13",
+      "pct_weeks_ge_30": 0.0,
+      "best_week_pct": 5.3,
+      "worst_week_pct": -8.6,
+      "median_week_pct": 0.09,
+      "longest_run_of_30pct_weeks": 0,
+      "avg_week_compounded_pct": 0.04
+    },
+    "SGLN.L": {
+      "name": "iShares Physical Gold",
+      "weeks": 802,
+      "from": "2011-07-08",
+      "to": "2026-11-13",
+      "pct_weeks_ge_30": 0.0,
+      "best_week_pct": 7.5,
+      "worst_week_pct": -9.7,
+      "median_week_pct": 0.13,
+      "longest_run_of_30pct_weeks": 0,
+      "avg_week_compounded_pct": 0.14
+    },
+    "ERNS.L": {
+      "name": "iShares GBP Ultrashort Bond (cash proxy)",
+      "weeks": 682,
+      "from": "2013-10-25",
+      "to": "2026-11-13",
+      "pct_weeks_ge_30": 0.0,
+      "best_week_pct": 0.4,
+      "worst_week_pct": -0.5,
+      "median_week_pct": 0.03,
+      "longest_run_of_30pct_weeks": 0,
+      "avg_week_compounded_pct": 0.04
+    },
+    "BTC-GBP": {
+      "name": "Bitcoin",
+      "weeks": 635,
+      "from": "2014-09-26",
+      "to": "2026-11-20",
+      "pct_weeks_ge_30": 0.63,
+      "best_week_pct": 51.9,
+      "worst_week_pct": -35.1,
+      "median_week_pct": 0.66,
+      "longest_run_of_30pct_weeks": 2,
+      "avg_week_compounded_pct": 0.85
+    },
+    "ETH-GBP": {
+      "name": "Ether",
+      "weeks": 470,
+      "from": "2017-11-24",
+      "to": "2026-11-20",
+      "pct_weeks_ge_30": 1.49,
+      "best_week_pct": 69.0,
+      "worst_week_pct": -41.8,
+      "median_week_pct": 0.28,
+      "longest_run_of_30pct_weeks": 1,
+      "avg_week_compounded_pct": 0.37
+    },
+    "SOL-USD": {
+      "name": "Solana",
+      "weeks": 345,
+      "from": "2020-04-17",
+      "to": "2026-11-20",
+      "pct_weeks_ge_30": 6.09,
+      "best_week_pct": 75.4,
+      "worst_week_pct": -51.7,
+      "median_week_pct": -0.69,
+      "longest_run_of_30pct_weeks": 3,
+      "avg_week_compounded_pct": 1.28
+    },
+    "NVDA": {
+      "name": "Nvidia",
+      "weeks": 671,
+      "from": "2014-01-10",
+      "to": "2026-11-13",
+      "pct_weeks_ge_30": 0.15,
+      "best_week_pct": 30.2,
+      "worst_week_pct": -20.1,
+      "median_week_pct": 1.06,
+      "longest_run_of_30pct_weeks": 1,
+      "avg_week_compounded_pct": 0.91
+    },
+    "TSLA": {
+      "name": "Tesla",
+      "weeks": 671,
+      "from": "2014-01-10",
+      "to": "2026-11-13",
+      "pct_weeks_ge_30": 0.3,
+      "best_week_pct": 33.3,
+      "worst_week_pct": -25.9,
+      "median_week_pct": 0.57,
+      "longest_run_of_30pct_weeks": 1,
+      "avg_week_compounded_pct": 0.55
+    },
+    "TQQQ": {
+      "name": "3x leveraged Nasdaq ETF",
+      "weeks": 671,
+      "from": "2014-01-10",
+      "to": "2026-11-13",
+      "pct_weeks_ge_30": 0.0,
+      "best_week_pct": 28.9,
+      "worst_week_pct": -37.5,
+      "median_week_pct": 1.09,
+      "longest_run_of_30pct_weeks": 0,
+      "avg_week_compounded_pct": 0.58
+    }
+  },
+  "what_30pct_a_week_means": {
+    "after_4_weeks_from_100": 286.0,
+    "after_12_weeks_from_100": 2330.0,
+    "after_26_weeks_from_100": 91733.0,
+    "after_52_weeks_from_100": 84150039.0
+  },
+  "fees_on_100": {
+    "one_fund_one_purchase_pct": 3.05,
+    "two_funds_60_40_pct": 6.05,
+    "weekly_trading_in_and_out_per_year_pct": 317.0
+  }
+}

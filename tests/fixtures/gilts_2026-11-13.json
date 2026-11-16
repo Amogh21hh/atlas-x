@@ -1,0 +1,1757 @@
+{
+ "source": "https://www.dividenddata.co.uk/uk-gilts-prices-yields.py",
+ "fetched": "2026-11-14",
+ "note": "one-off snapshot used only as an independent test fixture",
+ "gilts": [
+  {
+   "ticker": "T27A",
+   "name": "4 1/8% Treasury Gilt 2027",
+   "coupon": 4.125,
+   "maturity": "29-Jan-2027",
+   "clean": 99.96,
+   "running": {
+    "zero": 4.127,
+    "basic": 3.301,
+    "higher": 2.476,
+    "additional": 2.27,
+    "basic2": 3.136,
+    "higher2": 2.311,
+    "additional2": 2.105
+   },
+   "gry": {
+    "zero": 4.293,
+    "basic": 3.477,
+    "higher": 2.658,
+    "additional": 2.453,
+    "basic2": 3.313,
+    "higher2": 2.494,
+    "additional2": 2.289
+   }
+  },
+  {
+   "ticker": "TS27",
+   "name": "3 3/4% Treasury Gilt 2027",
+   "coupon": 3.75,
+   "maturity": "07-Mar-2027",
+   "clean": 99.81,
+   "running": {
+    "zero": 3.757,
+    "basic": 3.006,
+    "higher": 2.254,
+    "additional": 2.066,
+    "basic2": 2.855,
+    "higher2": 2.104,
+    "additional2": 1.916
+   },
+   "gry": {
+    "zero": 4.349,
+    "basic": 3.602,
+    "higher": 2.854,
+    "additional": 2.667,
+    "basic2": 3.453,
+    "higher2": 2.705,
+    "additional2": 2.518
+   }
+  },
+  {
+   "ticker": "TG27",
+   "name": "1 1/4% Treasury Gilt 2027",
+   "coupon": 1.25,
+   "maturity": "22-Jul-2027",
+   "clean": 97.95,
+   "running": {
+    "zero": 1.276,
+    "basic": 1.021,
+    "higher": 0.766,
+    "additional": 0.702,
+    "basic2": 0.97,
+    "higher2": 0.715,
+    "additional2": 0.651
+   },
+   "gry": {
+    "zero": 4.294,
+    "basic": 4.04,
+    "higher": 3.786,
+    "additional": 3.722,
+    "basic2": 3.989,
+    "higher2": 3.735,
+    "additional2": 3.672
+   }
+  },
+  {
+   "ticker": "TR27",
+   "name": "4 1/4% Treasury Gilt 2027",
+   "coupon": 4.25,
+   "maturity": "07-Dec-2027",
+   "clean": 99.58,
+   "running": {
+    "zero": 4.268,
+    "basic": 3.414,
+    "higher": 2.561,
+    "additional": 2.347,
+    "basic2": 3.244,
+    "higher2": 2.39,
+    "additional2": 2.177
+   },
+   "gry": {
+    "zero": 4.656,
+    "basic": 3.804,
+    "higher": 2.952,
+    "additional": 2.739,
+    "basic2": 3.634,
+    "higher2": 2.782,
+    "additional2": 2.569
+   }
+  },
+  {
+   "ticker": "TN28",
+   "name": "0 1/8% Treasury Gilt 2028",
+   "coupon": 0.125,
+   "maturity": "31-Jan-2028",
+   "clean": 95.295,
+   "running": {
+    "zero": 0.131,
+    "basic": 0.105,
+    "higher": 0.079,
+    "additional": 0.072,
+    "basic2": 0.1,
+    "higher2": 0.073,
+    "additional2": 0.067
+   },
+   "gry": {
+    "zero": 4.136,
+    "basic": 4.111,
+    "higher": 4.085,
+    "additional": 4.078,
+    "basic2": 4.105,
+    "higher2": 4.08,
+    "additional2": 4.073
+   }
+  },
+  {
+   "ticker": "TE28",
+   "name": "4 3/8% Treasury Gilt 2028",
+   "coupon": 4.375,
+   "maturity": "07-Mar-2028",
+   "clean": 99.41,
+   "running": {
+    "zero": 4.401,
+    "basic": 3.521,
+    "higher": 2.641,
+    "additional": 2.421,
+    "basic2": 3.345,
+    "higher2": 2.465,
+    "additional2": 2.244
+   },
+   "gry": {
+    "zero": 4.839,
+    "basic": 3.962,
+    "higher": 3.084,
+    "additional": 2.865,
+    "basic2": 3.786,
+    "higher2": 2.909,
+    "additional2": 2.69
+   }
+  },
+  {
+   "ticker": "TS28",
+   "name": "4 1/2% Treasury Gilt 2028",
+   "coupon": 4.5,
+   "maturity": "07-Jun-2028",
+   "clean": 99.42,
+   "running": {
+    "zero": 4.526,
+    "basic": 3.621,
+    "higher": 2.716,
+    "additional": 2.489,
+    "basic2": 3.44,
+    "higher2": 2.535,
+    "additional2": 2.308
+   },
+   "gry": {
+    "zero": 4.887,
+    "basic": 3.984,
+    "higher": 3.082,
+    "additional": 2.856,
+    "basic2": 3.804,
+    "higher2": 2.901,
+    "additional2": 2.675
+   }
+  },
+  {
+   "ticker": "TG28",
+   "name": "1 5/8% Treasury Gilt 2028",
+   "coupon": 1.625,
+   "maturity": "22-Oct-2028",
+   "clean": 94.26,
+   "running": {
+    "zero": 1.724,
+    "basic": 1.379,
+    "higher": 1.034,
+    "additional": 0.948,
+    "basic2": 1.31,
+    "higher2": 0.965,
+    "additional2": 0.879
+   },
+   "gry": {
+    "zero": 4.758,
+    "basic": 4.42,
+    "higher": 4.083,
+    "additional": 3.999,
+    "basic2": 4.353,
+    "higher2": 4.016,
+    "additional2": 3.931
+   }
+  },
+  {
+   "ticker": "TR28",
+   "name": "6% Treasury Stock 2028",
+   "coupon": 6.0,
+   "maturity": "07-Dec-2028",
+   "clean": 102.47,
+   "running": {
+    "zero": 5.855,
+    "basic": 4.684,
+    "higher": 3.513,
+    "additional": 3.22,
+    "basic2": 4.45,
+    "higher2": 3.279,
+    "additional2": 2.986
+   },
+   "gry": {
+    "zero": 4.729,
+    "basic": 3.548,
+    "higher": 2.367,
+    "additional": 2.072,
+    "basic2": 3.312,
+    "higher2": 2.131,
+    "additional2": 1.836
+   }
+  },
+  {
+   "ticker": "TG29",
+   "name": "0 1/2% Treasury Gilt 2029",
+   "coupon": 0.5,
+   "maturity": "31-Jan-2029",
+   "clean": 91.19,
+   "running": {
+    "zero": 0.548,
+    "basic": 0.439,
+    "higher": 0.329,
+    "additional": 0.302,
+    "basic2": 0.417,
+    "higher2": 0.307,
+    "additional2": 0.28
+   },
+   "gry": {
+    "zero": 4.737,
+    "basic": 4.631,
+    "higher": 4.525,
+    "additional": 4.499,
+    "basic2": 4.61,
+    "higher2": 4.504,
+    "additional2": 4.478
+   }
+  },
+  {
+   "ticker": "T29K",
+   "name": "4% Treasury Gilt 2029",
+   "coupon": 4.0,
+   "maturity": "22-May-2029",
+   "clean": 97.74,
+   "running": {
+    "zero": 4.092,
+    "basic": 3.274,
+    "higher": 2.455,
+    "additional": 2.251,
+    "basic2": 3.11,
+    "higher2": 2.292,
+    "additional2": 2.087
+   },
+   "gry": {
+    "zero": 4.963,
+    "basic": 4.152,
+    "higher": 3.341,
+    "additional": 3.138,
+    "basic2": 3.99,
+    "higher2": 3.179,
+    "additional2": 2.976
+   }
+  },
+  {
+   "ticker": "TS29",
+   "name": "4 1/8% Treasury Gilt 2029",
+   "coupon": 4.125,
+   "maturity": "22-Jul-2029",
+   "clean": 97.93,
+   "running": {
+    "zero": 4.212,
+    "basic": 3.37,
+    "higher": 2.527,
+    "additional": 2.317,
+    "basic2": 3.201,
+    "higher2": 2.359,
+    "additional2": 2.148
+   },
+   "gry": {
+    "zero": 4.954,
+    "basic": 4.119,
+    "higher": 3.284,
+    "additional": 3.076,
+    "basic2": 3.952,
+    "higher2": 3.117,
+    "additional2": 2.909
+   }
+  },
+  {
+   "ticker": "TR29",
+   "name": "0 7/8% Treasury Gilt 2029",
+   "coupon": 0.875,
+   "maturity": "22-Oct-2029",
+   "clean": 89.21,
+   "running": {
+    "zero": 0.981,
+    "basic": 0.785,
+    "higher": 0.588,
+    "additional": 0.539,
+    "basic2": 0.745,
+    "higher2": 0.549,
+    "additional2": 0.5
+   },
+   "gry": {
+    "zero": 4.858,
+    "basic": 4.671,
+    "higher": 4.484,
+    "additional": 4.437,
+    "basic2": 4.633,
+    "higher2": 4.446,
+    "additional2": 4.399
+   }
+  },
+  {
+   "ticker": "T30",
+   "name": "4 3/8% Treasury Gilt 2030",
+   "coupon": 4.375,
+   "maturity": "07-Mar-2030",
+   "clean": 98.15,
+   "running": {
+    "zero": 4.457,
+    "basic": 3.566,
+    "higher": 2.674,
+    "additional": 2.452,
+    "basic2": 3.388,
+    "higher2": 2.496,
+    "additional2": 2.273
+   },
+   "gry": {
+    "zero": 4.985,
+    "basic": 4.101,
+    "higher": 3.217,
+    "additional": 2.996,
+    "basic2": 3.924,
+    "higher2": 3.04,
+    "additional2": 2.819
+   }
+  },
+  {
+   "ticker": "T30K",
+   "name": "4 5/8% Treasury Gilt 2030",
+   "coupon": 4.625,
+   "maturity": "22-May-2030",
+   "clean": 98.81,
+   "running": {
+    "zero": 4.681,
+    "basic": 3.745,
+    "higher": 2.808,
+    "additional": 2.574,
+    "basic2": 3.557,
+    "higher2": 2.621,
+    "additional2": 2.387
+   },
+   "gry": {
+    "zero": 4.997,
+    "basic": 4.066,
+    "higher": 3.134,
+    "additional": 2.901,
+    "basic2": 3.879,
+    "higher2": 2.948,
+    "additional2": 2.715
+   }
+  },
+  {
+   "ticker": "TG30",
+   "name": "0 3/8% Treasury Gilt 2030",
+   "coupon": 0.375,
+   "maturity": "22-Oct-2030",
+   "clean": 84.14,
+   "running": {
+    "zero": 0.446,
+    "basic": 0.357,
+    "higher": 0.267,
+    "additional": 0.245,
+    "basic2": 0.339,
+    "higher2": 0.25,
+    "additional2": 0.227
+   },
+   "gry": {
+    "zero": 4.846,
+    "basic": 4.763,
+    "higher": 4.68,
+    "additional": 4.659,
+    "basic2": 4.746,
+    "higher2": 4.664,
+    "additional2": 4.643
+   }
+  },
+  {
+   "ticker": "TR30",
+   "name": "4 3/4% Treasury Gilt 2030",
+   "coupon": 4.75,
+   "maturity": "07-Dec-2030",
+   "clean": 99.38,
+   "running": {
+    "zero": 4.78,
+    "basic": 3.824,
+    "higher": 2.868,
+    "additional": 2.629,
+    "basic2": 3.633,
+    "higher2": 2.677,
+    "additional2": 2.438
+   },
+   "gry": {
+    "zero": 4.919,
+    "basic": 3.966,
+    "higher": 3.013,
+    "additional": 2.775,
+    "basic2": 3.775,
+    "higher2": 2.822,
+    "additional2": 2.584
+   }
+  },
+  {
+   "ticker": "T31H",
+   "name": "4 1/8% Treasury Gilt 2031",
+   "coupon": 4.125,
+   "maturity": "07-Mar-2031",
+   "clean": 96.64,
+   "running": {
+    "zero": 4.268,
+    "basic": 3.415,
+    "higher": 2.561,
+    "additional": 2.348,
+    "basic2": 3.244,
+    "higher2": 2.39,
+    "additional2": 2.177
+   },
+   "gry": {
+    "zero": 4.999,
+    "basic": 4.158,
+    "higher": 3.317,
+    "additional": 3.106,
+    "basic2": 3.989,
+    "higher2": 3.148,
+    "additional2": 2.938
+   }
+  },
+  {
+   "ticker": "TG31",
+   "name": "0 1/4% Treasury Gilt 2031",
+   "coupon": 0.25,
+   "maturity": "31-Jul-2031",
+   "clean": 80.81,
+   "running": {
+    "zero": 0.309,
+    "basic": 0.247,
+    "higher": 0.186,
+    "additional": 0.17,
+    "basic2": 0.235,
+    "higher2": 0.173,
+    "additional2": 0.158
+   },
+   "gry": {
+    "zero": 4.852,
+    "basic": 4.796,
+    "higher": 4.74,
+    "additional": 4.726,
+    "basic2": 4.785,
+    "higher2": 4.728,
+    "additional2": 4.714
+   }
+  },
+  {
+   "ticker": "T31",
+   "name": "4% Treasury Gilt 2031",
+   "coupon": 4.0,
+   "maturity": "22-Oct-2031",
+   "clean": 95.63,
+   "running": {
+    "zero": 4.183,
+    "basic": 3.346,
+    "higher": 2.51,
+    "additional": 2.301,
+    "basic2": 3.179,
+    "higher2": 2.342,
+    "additional2": 2.133
+   },
+   "gry": {
+    "zero": 5.009,
+    "basic": 4.188,
+    "higher": 3.367,
+    "additional": 3.162,
+    "basic2": 4.024,
+    "higher2": 3.203,
+    "additional2": 2.998
+   }
+  },
+  {
+   "ticker": "TG32",
+   "name": "1% Treasury Gilt 2032",
+   "coupon": 1.0,
+   "maturity": "31-Jan-2032",
+   "clean": 81.76,
+   "running": {
+    "zero": 1.223,
+    "basic": 0.978,
+    "higher": 0.734,
+    "additional": 0.673,
+    "basic2": 0.93,
+    "higher2": 0.685,
+    "additional2": 0.624
+   },
+   "gry": {
+    "zero": 5.019,
+    "basic": 4.795,
+    "higher": 4.571,
+    "additional": 4.515,
+    "basic2": 4.75,
+    "higher2": 4.526,
+    "additional2": 4.47
+   }
+  },
+  {
+   "ticker": "T32H",
+   "name": "4 5/8% Treasury Gilt 2032",
+   "coupon": 4.625,
+   "maturity": "07-Mar-2032",
+   "clean": 98.02,
+   "running": {
+    "zero": 4.718,
+    "basic": 3.775,
+    "higher": 2.831,
+    "additional": 2.595,
+    "basic2": 3.586,
+    "higher2": 2.642,
+    "additional2": 2.406
+   },
+   "gry": {
+    "zero": 5.053,
+    "basic": 4.118,
+    "higher": 3.182,
+    "additional": 2.949,
+    "basic2": 3.931,
+    "higher2": 2.995,
+    "additional2": 2.761
+   }
+  },
+  {
+   "ticker": "TR32",
+   "name": "4 1/4% Treasury Stock 2032",
+   "coupon": 4.25,
+   "maturity": "07-Jun-2032",
+   "clean": 96.36,
+   "running": {
+    "zero": 4.411,
+    "basic": 3.528,
+    "higher": 2.646,
+    "additional": 2.426,
+    "basic2": 3.352,
+    "higher2": 2.47,
+    "additional2": 2.249
+   },
+   "gry": {
+    "zero": 5.007,
+    "basic": 4.139,
+    "higher": 3.27,
+    "additional": 3.053,
+    "basic2": 3.965,
+    "higher2": 3.097,
+    "additional2": 2.88
+   }
+  },
+  {
+   "ticker": "TR33",
+   "name": "3 1/4% Treasury Gilt 2033",
+   "coupon": 3.25,
+   "maturity": "31-Jan-2033",
+   "clean": 90.27,
+   "running": {
+    "zero": 3.6,
+    "basic": 2.88,
+    "higher": 2.16,
+    "additional": 1.98,
+    "basic2": 2.736,
+    "higher2": 2.016,
+    "additional2": 1.836
+   },
+   "gry": {
+    "zero": 5.095,
+    "basic": 4.406,
+    "higher": 3.718,
+    "additional": 3.545,
+    "basic2": 4.268,
+    "higher2": 3.58,
+    "additional2": 3.408
+   }
+  },
+  {
+   "ticker": "T33H",
+   "name": "4 1/8% Treasury Gilt 2033",
+   "coupon": 4.125,
+   "maturity": "07-Mar-2033",
+   "clean": 94.76,
+   "running": {
+    "zero": 4.353,
+    "basic": 3.482,
+    "higher": 2.612,
+    "additional": 2.394,
+    "basic2": 3.308,
+    "higher2": 2.438,
+    "additional2": 2.22
+   },
+   "gry": {
+    "zero": 5.105,
+    "basic": 4.254,
+    "higher": 3.404,
+    "additional": 3.191,
+    "basic2": 4.084,
+    "higher2": 3.234,
+    "additional2": 3.021
+   }
+  },
+  {
+   "ticker": "TG33",
+   "name": "0 7/8% Green Gilt 2033",
+   "coupon": 0.875,
+   "maturity": "31-Jul-2033",
+   "clean": 76.13,
+   "running": {
+    "zero": 1.149,
+    "basic": 0.919,
+    "higher": 0.69,
+    "additional": 0.632,
+    "basic2": 0.874,
+    "higher2": 0.644,
+    "additional2": 0.586
+   },
+   "gry": {
+    "zero": 5.121,
+    "basic": 4.917,
+    "higher": 4.713,
+    "additional": 4.662,
+    "basic2": 4.876,
+    "higher2": 4.673,
+    "additional2": 4.622
+   }
+  },
+  {
+   "ticker": "T34",
+   "name": "4 5/8% Treasury Gilt 2034",
+   "coupon": 4.625,
+   "maturity": "31-Jan-2034",
+   "clean": 96.82,
+   "running": {
+    "zero": 4.777,
+    "basic": 3.822,
+    "higher": 2.866,
+    "additional": 2.627,
+    "basic2": 3.63,
+    "higher2": 2.675,
+    "additional2": 2.436
+   },
+   "gry": {
+    "zero": 5.157,
+    "basic": 4.215,
+    "higher": 3.273,
+    "additional": 3.038,
+    "basic2": 4.027,
+    "higher2": 3.085,
+    "additional2": 2.849
+   }
+  },
+  {
+   "ticker": "TS34",
+   "name": "4 1/4% Treasury Gilt 2034",
+   "coupon": 4.25,
+   "maturity": "31-Jul-2034",
+   "clean": 94.11,
+   "running": {
+    "zero": 4.516,
+    "basic": 3.613,
+    "higher": 2.71,
+    "additional": 2.484,
+    "basic2": 3.432,
+    "higher2": 2.529,
+    "additional2": 2.303
+   },
+   "gry": {
+    "zero": 5.185,
+    "basic": 4.305,
+    "higher": 3.425,
+    "additional": 3.205,
+    "basic2": 4.129,
+    "higher2": 3.249,
+    "additional2": 3.029
+   }
+  },
+  {
+   "ticker": "TR34",
+   "name": "4 1/2% Treasury Gilt 2034",
+   "coupon": 4.5,
+   "maturity": "07-Sep-2034",
+   "clean": 95.77,
+   "running": {
+    "zero": 4.699,
+    "basic": 3.759,
+    "higher": 2.819,
+    "additional": 2.584,
+    "basic2": 3.571,
+    "higher2": 2.631,
+    "additional2": 2.396
+   },
+   "gry": {
+    "zero": 5.164,
+    "basic": 4.241,
+    "higher": 3.319,
+    "additional": 3.088,
+    "basic2": 4.056,
+    "higher2": 3.134,
+    "additional2": 2.904
+   }
+  },
+  {
+   "ticker": "T35",
+   "name": "4 1/2% Treasury Gilt 2035",
+   "coupon": 4.5,
+   "maturity": "07-Mar-2035",
+   "clean": 95.03,
+   "running": {
+    "zero": 4.735,
+    "basic": 3.788,
+    "higher": 2.841,
+    "additional": 2.604,
+    "basic2": 3.599,
+    "higher2": 2.652,
+    "additional2": 2.415
+   },
+   "gry": {
+    "zero": 5.244,
+    "basic": 4.317,
+    "higher": 3.391,
+    "additional": 3.159,
+    "basic2": 4.132,
+    "higher2": 3.205,
+    "additional2": 2.974
+   }
+  },
+  {
+   "ticker": "TG35",
+   "name": "0 5/8% Treasury Gilt 2035",
+   "coupon": 0.625,
+   "maturity": "31-Jul-2035",
+   "clean": 68.08,
+   "running": {
+    "zero": 0.918,
+    "basic": 0.734,
+    "higher": 0.551,
+    "additional": 0.505,
+    "basic2": 0.698,
+    "higher2": 0.514,
+    "additional2": 0.468
+   },
+   "gry": {
+    "zero": 5.233,
+    "basic": 5.078,
+    "higher": 4.924,
+    "additional": 4.885,
+    "basic2": 5.047,
+    "higher2": 4.893,
+    "additional2": 4.854
+   }
+  },
+  {
+   "ticker": "T35V",
+   "name": "4 3/4% Treasury Gilt 2035",
+   "coupon": 4.75,
+   "maturity": "22-Oct-2035",
+   "clean": 96.23,
+   "running": {
+    "zero": 4.936,
+    "basic": 3.949,
+    "higher": 2.962,
+    "additional": 2.715,
+    "basic2": 3.751,
+    "higher2": 2.764,
+    "additional2": 2.517
+   },
+   "gry": {
+    "zero": 5.284,
+    "basic": 4.312,
+    "higher": 3.341,
+    "additional": 3.098,
+    "basic2": 4.118,
+    "higher2": 3.147,
+    "additional2": 2.904
+   }
+  },
+  {
+   "ticker": "T4Q",
+   "name": "4 1/4% Treasury Stock 2036",
+   "coupon": 4.25,
+   "maturity": "07-Mar-2036",
+   "clean": 92.38,
+   "running": {
+    "zero": 4.601,
+    "basic": 3.68,
+    "higher": 2.76,
+    "additional": 2.53,
+    "basic2": 3.496,
+    "higher2": 2.576,
+    "additional2": 2.346
+   },
+   "gry": {
+    "zero": 5.296,
+    "basic": 4.406,
+    "higher": 3.516,
+    "additional": 3.294,
+    "basic2": 4.228,
+    "higher2": 3.338,
+    "additional2": 3.116
+   }
+  },
+  {
+   "ticker": "T36N",
+   "name": "4 7/8% Treasury Gilt 2036",
+   "coupon": 4.875,
+   "maturity": "31-Jul-2036",
+   "clean": 96.54,
+   "running": {
+    "zero": 5.05,
+    "basic": 4.04,
+    "higher": 3.03,
+    "additional": 2.777,
+    "basic2": 3.838,
+    "higher2": 2.828,
+    "additional2": 2.575
+   },
+   "gry": {
+    "zero": 5.335,
+    "basic": 4.34,
+    "higher": 3.345,
+    "additional": 3.096,
+    "basic2": 4.141,
+    "higher2": 3.146,
+    "additional2": 2.897
+   }
+  },
+  {
+   "ticker": "T37H",
+   "name": "4 5/8% Green Gilt 2037",
+   "coupon": 4.625,
+   "maturity": "07-Mar-2037",
+   "clean": 94.06,
+   "running": {
+    "zero": 4.917,
+    "basic": 3.934,
+    "higher": 2.95,
+    "additional": 2.704,
+    "basic2": 3.737,
+    "higher2": 2.754,
+    "additional2": 2.508
+   },
+   "gry": {
+    "zero": 5.382,
+    "basic": 4.423,
+    "higher": 3.464,
+    "additional": 3.225,
+    "basic2": 4.231,
+    "higher2": 3.273,
+    "additional2": 3.033
+   }
+  },
+  {
+   "ticker": "TG37",
+   "name": "1 3/4% Treasury Gilt 2037",
+   "coupon": 1.75,
+   "maturity": "07-Sep-2037",
+   "clean": 70.37,
+   "running": {
+    "zero": 2.487,
+    "basic": 1.989,
+    "higher": 1.492,
+    "additional": 1.368,
+    "basic2": 1.89,
+    "higher2": 1.393,
+    "additional2": 1.268
+   },
+   "gry": {
+    "zero": 5.403,
+    "basic": 4.976,
+    "higher": 4.549,
+    "additional": 4.442,
+    "basic2": 4.89,
+    "higher2": 4.464,
+    "additional2": 4.357
+   }
+  },
+  {
+   "ticker": "TG38",
+   "name": "3 3/4% Treasury Gilt 2038",
+   "coupon": 3.75,
+   "maturity": "29-Jan-2038",
+   "clean": 85.94,
+   "running": {
+    "zero": 4.364,
+    "basic": 3.491,
+    "higher": 2.618,
+    "additional": 2.4,
+    "basic2": 3.316,
+    "higher2": 2.444,
+    "additional2": 2.225
+   },
+   "gry": {
+    "zero": 5.441,
+    "basic": 4.621,
+    "higher": 3.802,
+    "additional": 3.598,
+    "basic2": 4.457,
+    "higher2": 3.638,
+    "additional2": 3.434
+   }
+  },
+  {
+   "ticker": "TR38",
+   "name": "4 3/4% Treasury Stock 2038",
+   "coupon": 4.75,
+   "maturity": "07-Dec-2038",
+   "clean": 93.68,
+   "running": {
+    "zero": 5.07,
+    "basic": 4.056,
+    "higher": 3.042,
+    "additional": 2.789,
+    "basic2": 3.854,
+    "higher2": 2.839,
+    "additional2": 2.586
+   },
+   "gry": {
+    "zero": 5.472,
+    "basic": 4.484,
+    "higher": 3.496,
+    "additional": 3.25,
+    "basic2": 4.286,
+    "higher2": 3.299,
+    "additional2": 3.053
+   }
+  },
+  {
+   "ticker": "TR39",
+   "name": "1 1/8% Treasury Gilt 2039",
+   "coupon": 1.125,
+   "maturity": "31-Jan-2039",
+   "clean": 61.63,
+   "running": {
+    "zero": 1.825,
+    "basic": 1.46,
+    "higher": 1.095,
+    "additional": 1.004,
+    "basic2": 1.387,
+    "higher2": 1.022,
+    "additional2": 0.931
+   },
+   "gry": {
+    "zero": 5.474,
+    "basic": 5.178,
+    "higher": 4.883,
+    "additional": 4.809,
+    "basic2": 5.119,
+    "higher2": 4.824,
+    "additional2": 4.75
+   }
+  },
+  {
+   "ticker": "T39",
+   "name": "4 1/4% Treasury Gilt 2039",
+   "coupon": 4.25,
+   "maturity": "07-Sep-2039",
+   "clean": 88.45,
+   "running": {
+    "zero": 4.805,
+    "basic": 3.844,
+    "higher": 2.883,
+    "additional": 2.643,
+    "basic2": 3.652,
+    "higher2": 2.691,
+    "additional2": 2.451
+   },
+   "gry": {
+    "zero": 5.518,
+    "basic": 4.603,
+    "higher": 3.689,
+    "additional": 3.461,
+    "basic2": 4.42,
+    "higher2": 3.506,
+    "additional2": 3.278
+   }
+  },
+  {
+   "ticker": "TG40",
+   "name": "4 3/8% Treasury Gilt 2040",
+   "coupon": 4.375,
+   "maturity": "31-Jan-2040",
+   "clean": 89.04,
+   "running": {
+    "zero": 4.914,
+    "basic": 3.931,
+    "higher": 2.948,
+    "additional": 2.702,
+    "basic2": 3.734,
+    "higher2": 2.752,
+    "additional2": 2.506
+   },
+   "gry": {
+    "zero": 5.556,
+    "basic": 4.617,
+    "higher": 3.679,
+    "additional": 3.445,
+    "basic2": 4.429,
+    "higher2": 3.492,
+    "additional2": 3.258
+   }
+  },
+  {
+   "ticker": "T40",
+   "name": "4 1/4% Treasury Gilt 2040",
+   "coupon": 4.25,
+   "maturity": "07-Dec-2040",
+   "clean": 87.31,
+   "running": {
+    "zero": 4.868,
+    "basic": 3.894,
+    "higher": 2.921,
+    "additional": 2.677,
+    "basic2": 3.699,
+    "higher2": 2.726,
+    "additional2": 2.483
+   },
+   "gry": {
+    "zero": 5.562,
+    "basic": 4.638,
+    "higher": 3.717,
+    "additional": 3.487,
+    "basic2": 4.454,
+    "higher2": 3.533,
+    "additional2": 3.303
+   }
+  },
+  {
+   "ticker": "T41F",
+   "name": "5 1/4% Treasury Gilt 2041",
+   "coupon": 5.25,
+   "maturity": "31-Jan-2041",
+   "clean": 96.62,
+   "running": {
+    "zero": 5.434,
+    "basic": 4.347,
+    "higher": 3.26,
+    "additional": 2.989,
+    "basic2": 4.13,
+    "higher2": 3.043,
+    "additional2": 2.771
+   },
+   "gry": {
+    "zero": 5.597,
+    "basic": 4.524,
+    "higher": 3.453,
+    "additional": 3.185,
+    "basic2": 4.31,
+    "higher2": 3.238,
+    "additional2": 2.971
+   }
+  },
+  {
+   "ticker": "TG41",
+   "name": "1 1/4% Treasury Gilt 2041",
+   "coupon": 1.25,
+   "maturity": "22-Oct-2041",
+   "clean": 56.32,
+   "running": {
+    "zero": 2.219,
+    "basic": 1.776,
+    "higher": 1.332,
+    "additional": 1.221,
+    "basic2": 1.687,
+    "higher2": 1.243,
+    "additional2": 1.132
+   },
+   "gry": {
+    "zero": 5.605,
+    "basic": 5.257,
+    "higher": 4.91,
+    "additional": 4.824,
+    "basic2": 5.188,
+    "higher2": 4.841,
+    "additional2": 4.755
+   }
+  },
+  {
+   "ticker": "T42",
+   "name": "4 1/2% Treasury Gilt 2042",
+   "coupon": 4.5,
+   "maturity": "07-Dec-2042",
+   "clean": 87.93,
+   "running": {
+    "zero": 5.118,
+    "basic": 4.094,
+    "higher": 3.071,
+    "additional": 2.815,
+    "basic2": 3.889,
+    "higher2": 2.866,
+    "additional2": 2.61
+   },
+   "gry": {
+    "zero": 5.653,
+    "basic": 4.677,
+    "higher": 3.703,
+    "additional": 3.461,
+    "basic2": 4.482,
+    "higher2": 3.509,
+    "additional2": 3.266
+   }
+  },
+  {
+   "ticker": "TR43",
+   "name": "4 3/4% Treasury Gilt 2043",
+   "coupon": 4.75,
+   "maturity": "22-Oct-2043",
+   "clean": 89.69,
+   "running": {
+    "zero": 5.296,
+    "basic": 4.237,
+    "higher": 3.178,
+    "additional": 2.913,
+    "basic2": 4.025,
+    "higher2": 2.966,
+    "additional2": 2.701
+   },
+   "gry": {
+    "zero": 5.707,
+    "basic": 4.689,
+    "higher": 3.673,
+    "additional": 3.419,
+    "basic2": 4.485,
+    "higher2": 3.47,
+    "additional2": 3.217
+   }
+  },
+  {
+   "ticker": "TG44",
+   "name": "3 1/4% Treasury Gilt 2044",
+   "coupon": 3.25,
+   "maturity": "22-Jan-2044",
+   "clean": 73.2,
+   "running": {
+    "zero": 4.44,
+    "basic": 3.552,
+    "higher": 2.664,
+    "additional": 2.442,
+    "basic2": 3.374,
+    "higher2": 2.486,
+    "additional2": 2.264
+   },
+   "gry": {
+    "zero": 5.719,
+    "basic": 4.929,
+    "higher": 4.145,
+    "additional": 3.95,
+    "basic2": 4.772,
+    "higher2": 3.989,
+    "additional2": 3.794
+   }
+  },
+  {
+   "ticker": "T45",
+   "name": "3 1/2% Treasury Gilt 2045",
+   "coupon": 3.5,
+   "maturity": "22-Jan-2045",
+   "clean": 74.95,
+   "running": {
+    "zero": 4.67,
+    "basic": 3.736,
+    "higher": 2.802,
+    "additional": 2.568,
+    "basic2": 3.549,
+    "higher2": 2.615,
+    "additional2": 2.382
+   },
+   "gry": {
+    "zero": 5.736,
+    "basic": 4.895,
+    "higher": 4.061,
+    "additional": 3.853,
+    "basic2": 4.728,
+    "higher2": 3.895,
+    "additional2": 3.687
+   }
+  },
+  {
+   "ticker": "TG46",
+   "name": "0 7/8% Treasury Gilt 2046",
+   "coupon": 0.875,
+   "maturity": "31-Jan-2046",
+   "clean": 43.67,
+   "running": {
+    "zero": 2.004,
+    "basic": 1.603,
+    "higher": 1.202,
+    "additional": 1.102,
+    "basic2": 1.523,
+    "higher2": 1.122,
+    "additional2": 1.022
+   },
+   "gry": {
+    "zero": 5.76,
+    "basic": 5.476,
+    "higher": 5.194,
+    "additional": 5.123,
+    "basic2": 5.419,
+    "higher2": 5.137,
+    "additional2": 5.067
+   }
+  },
+  {
+   "ticker": "T46",
+   "name": "4 1/4% Treasury Gilt 2046",
+   "coupon": 4.25,
+   "maturity": "07-Dec-2046",
+   "clean": 82.39,
+   "running": {
+    "zero": 5.158,
+    "basic": 4.127,
+    "higher": 3.095,
+    "additional": 2.837,
+    "basic2": 3.92,
+    "higher2": 2.889,
+    "additional2": 2.631
+   },
+   "gry": {
+    "zero": 5.739,
+    "basic": 4.774,
+    "higher": 3.814,
+    "additional": 3.575,
+    "basic2": 4.581,
+    "higher2": 3.622,
+    "additional2": 3.384
+   }
+  },
+  {
+   "ticker": "TG47",
+   "name": "1 1/2% Treasury Gilt 2047",
+   "coupon": 1.5,
+   "maturity": "22-Jul-2047",
+   "clean": 48.72,
+   "running": {
+    "zero": 3.079,
+    "basic": 2.463,
+    "higher": 1.847,
+    "additional": 1.693,
+    "basic2": 2.34,
+    "higher2": 1.724,
+    "additional2": 1.57
+   },
+   "gry": {
+    "zero": 5.781,
+    "basic": 5.316,
+    "higher": 4.856,
+    "additional": 4.742,
+    "basic2": 5.224,
+    "higher2": 4.765,
+    "additional2": 4.651
+   }
+  },
+  {
+   "ticker": "TG49",
+   "name": "1 3/4% Treasury Gilt 2049",
+   "coupon": 1.75,
+   "maturity": "22-Jan-2049",
+   "clean": 49.99,
+   "running": {
+    "zero": 3.501,
+    "basic": 2.801,
+    "higher": 2.1,
+    "additional": 1.925,
+    "basic2": 2.661,
+    "higher2": 1.96,
+    "additional2": 1.785
+   },
+   "gry": {
+    "zero": 5.777,
+    "basic": 5.238,
+    "higher": 4.705,
+    "additional": 4.573,
+    "basic2": 5.131,
+    "higher2": 4.6,
+    "additional2": 4.468
+   }
+  },
+  {
+   "ticker": "T49",
+   "name": "4 1/4% Treasury Gilt 2049",
+   "coupon": 4.25,
+   "maturity": "07-Dec-2049",
+   "clean": 80.91,
+   "running": {
+    "zero": 5.253,
+    "basic": 4.202,
+    "higher": 3.152,
+    "additional": 2.889,
+    "basic2": 3.992,
+    "higher2": 2.942,
+    "additional2": 2.679
+   },
+   "gry": {
+    "zero": 5.755,
+    "basic": 4.774,
+    "higher": 3.8,
+    "additional": 3.557,
+    "basic2": 4.579,
+    "higher2": 3.606,
+    "additional2": 3.364
+   }
+  },
+  {
+   "ticker": "TG50",
+   "name": "0 5/8% Treasury Gilt 2050",
+   "coupon": 0.625,
+   "maturity": "22-Oct-2050",
+   "clean": 33.57,
+   "running": {
+    "zero": 1.862,
+    "basic": 1.489,
+    "higher": 1.117,
+    "additional": 1.024,
+    "basic2": 1.415,
+    "higher2": 1.043,
+    "additional2": 0.95
+   },
+   "gry": {
+    "zero": 5.786,
+    "basic": 5.547,
+    "higher": 5.31,
+    "additional": 5.251,
+    "basic2": 5.5,
+    "higher2": 5.262,
+    "additional2": 5.204
+   }
+  },
+  {
+   "ticker": "T51A",
+   "name": "1 1/4% Treasury Gilt 2051",
+   "coupon": 1.25,
+   "maturity": "31-Jul-2051",
+   "clean": 40.5,
+   "running": {
+    "zero": 3.086,
+    "basic": 2.469,
+    "higher": 1.852,
+    "additional": 1.698,
+    "basic2": 2.346,
+    "higher2": 1.728,
+    "additional2": 1.574
+   },
+   "gry": {
+    "zero": 5.819,
+    "basic": 5.381,
+    "higher": 4.949,
+    "additional": 4.842,
+    "basic2": 5.294,
+    "higher2": 4.863,
+    "additional2": 4.757
+   }
+  },
+  {
+   "ticker": "T52",
+   "name": "3 3/4% Treasury Gilt 2052",
+   "coupon": 3.75,
+   "maturity": "22-Jul-2052",
+   "clean": 73.02,
+   "running": {
+    "zero": 5.136,
+    "basic": 4.108,
+    "higher": 3.081,
+    "additional": 2.825,
+    "basic2": 3.903,
+    "higher2": 2.876,
+    "additional2": 2.619
+   },
+   "gry": {
+    "zero": 5.778,
+    "basic": 4.847,
+    "higher": 3.927,
+    "additional": 3.698,
+    "basic2": 4.662,
+    "higher2": 3.744,
+    "additional2": 3.516
+   }
+  },
+  {
+   "ticker": "TG53",
+   "name": "1 1/2% Green Gilt 2053",
+   "coupon": 1.5,
+   "maturity": "31-Jul-2053",
+   "clean": 41.805,
+   "running": {
+    "zero": 3.588,
+    "basic": 2.87,
+    "higher": 2.153,
+    "additional": 1.973,
+    "basic2": 2.727,
+    "higher2": 2.009,
+    "additional2": 1.83
+   },
+   "gry": {
+    "zero": 5.82,
+    "basic": 5.295,
+    "higher": 4.78,
+    "additional": 4.653,
+    "basic2": 5.191,
+    "higher2": 4.678,
+    "additional2": 4.552
+   }
+  },
+  {
+   "ticker": "T53",
+   "name": "3 3/4% Treasury Gilt 2053",
+   "coupon": 3.75,
+   "maturity": "22-Oct-2053",
+   "clean": 72.11,
+   "running": {
+    "zero": 5.2,
+    "basic": 4.16,
+    "higher": 3.12,
+    "additional": 2.86,
+    "basic2": 3.952,
+    "higher2": 2.912,
+    "additional2": 2.652
+   },
+   "gry": {
+    "zero": 5.811,
+    "basic": 4.869,
+    "higher": 3.939,
+    "additional": 3.708,
+    "basic2": 4.683,
+    "higher2": 3.754,
+    "additional2": 3.524
+   }
+  },
+  {
+   "ticker": "T54",
+   "name": "4 3/8% Treasury Gilt 2054",
+   "coupon": 4.375,
+   "maturity": "31-Jul-2054",
+   "clean": 80.37,
+   "running": {
+    "zero": 5.444,
+    "basic": 4.355,
+    "higher": 3.266,
+    "additional": 2.994,
+    "basic2": 4.137,
+    "higher2": 3.048,
+    "additional2": 2.776
+   },
+   "gry": {
+    "zero": 5.808,
+    "basic": 4.786,
+    "higher": 3.773,
+    "additional": 3.521,
+    "basic2": 4.583,
+    "higher2": 3.571,
+    "additional2": 3.32
+   }
+  },
+  {
+   "ticker": "TR54",
+   "name": "1 5/8% Treasury Gilt 2054",
+   "coupon": 1.625,
+   "maturity": "22-Oct-2054",
+   "clean": 42.735,
+   "running": {
+    "zero": 3.803,
+    "basic": 3.042,
+    "higher": 2.282,
+    "additional": 2.091,
+    "basic2": 2.89,
+    "higher2": 2.129,
+    "additional2": 1.939
+   },
+   "gry": {
+    "zero": 5.781,
+    "basic": 5.216,
+    "higher": 4.662,
+    "additional": 4.525,
+    "basic2": 5.104,
+    "higher2": 4.553,
+    "additional2": 4.416
+   }
+  },
+  {
+   "ticker": "TR4Q",
+   "name": "4 1/4% Treasury Gilt 2055",
+   "coupon": 4.25,
+   "maturity": "07-Dec-2055",
+   "clean": 78.66,
+   "running": {
+    "zero": 5.403,
+    "basic": 4.322,
+    "higher": 3.242,
+    "additional": 2.972,
+    "basic2": 4.106,
+    "higher2": 3.026,
+    "additional2": 2.756
+   },
+   "gry": {
+    "zero": 5.773,
+    "basic": 4.763,
+    "higher": 3.764,
+    "additional": 3.515,
+    "basic2": 4.563,
+    "higher2": 3.565,
+    "additional2": 3.317
+   }
+  },
+  {
+   "ticker": "T56",
+   "name": "5 3/8% Treasury Gilt 2056",
+   "coupon": 5.375,
+   "maturity": "31-Jan-2056",
+   "clean": 94.31,
+   "running": {
+    "zero": 5.699,
+    "basic": 4.559,
+    "higher": 3.42,
+    "additional": 3.135,
+    "basic2": 4.331,
+    "higher2": 3.192,
+    "additional2": 2.907
+   },
+   "gry": {
+    "zero": 5.78,
+    "basic": 4.658,
+    "higher": 3.539,
+    "additional": 3.26,
+    "basic2": 4.434,
+    "higher2": 3.315,
+    "additional2": 3.036
+   }
+  },
+  {
+   "ticker": "TG57",
+   "name": "1 3/4% Treasury Gilt 2057",
+   "coupon": 1.75,
+   "maturity": "22-Jul-2057",
+   "clean": 42.675,
+   "running": {
+    "zero": 4.101,
+    "basic": 3.281,
+    "higher": 2.46,
+    "additional": 2.255,
+    "basic2": 3.117,
+    "higher2": 2.296,
+    "additional2": 2.091
+   },
+   "gry": {
+    "zero": 5.746,
+    "basic": 5.127,
+    "higher": 4.523,
+    "additional": 4.374,
+    "basic2": 5.005,
+    "higher2": 4.404,
+    "additional2": 4.256
+   }
+  },
+  {
+   "ticker": "TR60",
+   "name": "4% Treasury Gilt 2060",
+   "coupon": 4.0,
+   "maturity": "22-Jan-2060",
+   "clean": 74.48,
+   "running": {
+    "zero": 5.371,
+    "basic": 4.296,
+    "higher": 3.222,
+    "additional": 2.954,
+    "basic2": 4.082,
+    "higher2": 3.008,
+    "additional2": 2.739
+   },
+   "gry": {
+    "zero": 5.726,
+    "basic": 4.732,
+    "higher": 3.75,
+    "additional": 3.507,
+    "basic2": 4.534,
+    "higher2": 3.556,
+    "additional2": 3.313
+   }
+  },
+  {
+   "ticker": "TG61",
+   "name": "0 1/2% Treasury Gilt 2061",
+   "coupon": 0.5,
+   "maturity": "22-Oct-2061",
+   "clean": 22.99,
+   "running": {
+    "zero": 2.175,
+    "basic": 1.74,
+    "higher": 1.305,
+    "additional": 1.196,
+    "basic2": 1.653,
+    "higher2": 1.218,
+    "additional2": 1.109
+   },
+   "gry": {
+    "zero": 5.46,
+    "basic": 5.209,
+    "higher": 4.963,
+    "additional": 4.902,
+    "basic2": 5.159,
+    "higher2": 4.914,
+    "additional2": 4.854
+   }
+  },
+  {
+   "ticker": "TR63",
+   "name": "4% Treasury Gilt 2063",
+   "coupon": 4.0,
+   "maturity": "22-Oct-2063",
+   "clean": 73.83,
+   "running": {
+    "zero": 5.418,
+    "basic": 4.334,
+    "higher": 3.251,
+    "additional": 2.98,
+    "basic2": 4.118,
+    "higher2": 3.034,
+    "additional2": 2.763
+   },
+   "gry": {
+    "zero": 5.707,
+    "basic": 4.7,
+    "higher": 3.706,
+    "additional": 3.461,
+    "basic2": 4.5,
+    "higher2": 3.51,
+    "additional2": 3.265
+   }
+  },
+  {
+   "ticker": "TG65",
+   "name": "2 1/2% Treasury Gilt 2065",
+   "coupon": 2.5,
+   "maturity": "22-Jul-2065",
+   "clean": 51.04,
+   "running": {
+    "zero": 4.898,
+    "basic": 3.918,
+    "higher": 2.939,
+    "additional": 2.694,
+    "basic2": 3.723,
+    "higher2": 2.743,
+    "additional2": 2.498
+   },
+   "gry": {
+    "zero": 5.614,
+    "basic": 4.794,
+    "higher": 3.997,
+    "additional": 3.801,
+    "basic2": 4.633,
+    "higher2": 3.84,
+    "additional2": 3.646
+   }
+  },
+  {
+   "ticker": "TR68",
+   "name": "3 1/2% Treasury Gilt 2068",
+   "coupon": 3.5,
+   "maturity": "22-Jul-2068",
+   "clean": 66.22,
+   "running": {
+    "zero": 5.285,
+    "basic": 4.228,
+    "higher": 3.171,
+    "additional": 2.907,
+    "basic2": 4.017,
+    "higher2": 2.96,
+    "additional2": 2.696
+   },
+   "gry": {
+    "zero": 5.602,
+    "basic": 4.638,
+    "higher": 3.695,
+    "additional": 3.462,
+    "basic2": 4.448,
+    "higher2": 3.508,
+    "additional2": 3.277
+   }
+  },
+  {
+   "ticker": "TG71",
+   "name": "1 5/8% Treasury Gilt 2071",
+   "coupon": 1.625,
+   "maturity": "22-Oct-2071",
+   "clean": 36.8,
+   "running": {
+    "zero": 4.416,
+    "basic": 3.533,
+    "higher": 2.649,
+    "additional": 2.429,
+    "basic2": 3.356,
+    "higher2": 2.473,
+    "additional2": 2.252
+   },
+   "gry": {
+    "zero": 5.358,
+    "basic": 4.681,
+    "higher": 4.031,
+    "additional": 3.873,
+    "basic2": 4.549,
+    "higher2": 3.904,
+    "additional2": 3.747
+   }
+  },
+  {
+   "ticker": "TR73",
+   "name": "1 1/8% Treasury Gilt 2073",
+   "coupon": 1.125,
+   "maturity": "22-Oct-2073",
+   "clean": 28.93,
+   "running": {
+    "zero": 3.889,
+    "basic": 3.111,
+    "higher": 2.333,
+    "additional": 2.139,
+    "basic2": 2.955,
+    "higher2": 2.178,
+    "additional2": 1.983
+   },
+   "gry": {
+    "zero": 5.164,
+    "basic": 4.618,
+    "higher": 4.096,
+    "additional": 3.969,
+    "basic2": 4.512,
+    "higher2": 3.994,
+    "additional2": 3.869
+   }
+  }
+ ]
+}
