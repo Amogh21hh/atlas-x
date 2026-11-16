@@ -95,6 +95,7 @@ def refresh(db: DB, symbols: list[str] | None = None) -> dict:
         if issues:
             db.event("warn", "data_quality", f"{s}: {'; '.join(issues)}")
     db.set("data_refreshed_at", datetime.now(timezone.utc).isoformat(timespec="seconds"))
+    db.set("prices_source", "live (Yahoo Finance daily closes)")
     return out
 
 
