@@ -35,13 +35,19 @@ SEED_PRICES = ROOT / "seed" / "prices.csv.gz"  # public daily closes; fallback w
 ADMIN_SESSION_S = 30 * 60
 
 
+SECRETS_ERROR = ""   # why secrets could not be read (never contains a value)
+
+
 def _secret(name: str, default: str = "") -> str:
     """Read one value from Streamlit secrets (or the environment). Never logged or displayed."""
+    global SECRETS_ERROR
     try:
         if name in st.secrets:
-            return str(st.secrets[name])
-    except Exception:  # no secrets.toml at all
+            return str(st.secrets[name]).strip()
+    except FileNotFoundError:  # no secrets configured at all
         pass
+    except Exception as e:  # malformed TOML, e.g. the same key twice
+        SECRETS_ERROR = f"the secrets could not be parsed ({type(e).__name__})"
     return os.environ.get(name, default)
 
 
@@ -330,7 +336,13 @@ with st.sidebar:
     st.divider()
     st.subheader("Admin")
     if not ADMIN_ENABLED:
-        st.caption("Controls are read-only: no admin password (12+ characters) is configured in Streamlit secrets.")
+        if SECRETS_ERROR:
+            why = SECRETS_ERROR + ". Check the TOML in the app's Secrets settings (each key once, values in quotes)"
+        elif ADMIN_PW:
+            why = f"ATLAS_ADMIN_PASSWORD is set but has {len(ADMIN_PW)} characters; it needs at least 12"
+        else:
+            why = "no ATLAS_ADMIN_PASSWORD is configured in Streamlit secrets"
+        st.caption(f"Controls are read-only: {why}.")
     elif is_admin():
         st.success("Signed in as admin")
         if st.button("Sign out"):
