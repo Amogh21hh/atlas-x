@@ -162,6 +162,11 @@ def test_full_cycle_paper(db):
     held = PaperBroker(db, lambda: {}).account().positions
     assert all(s == CASH_PROXY for s, p in held.items() if p.qty > 0)
     assert rep3["reconcile"]["ok"]
+    # the dashboard's latest snapshot already shows the post-sale book (not the pre-sale one)
+    import json
+    last = db.q("SELECT equity, positions FROM equity_snapshots WHERE broker='paper' ORDER BY ts DESC LIMIT 1")[0]
+    assert all(s == CASH_PROXY for s in json.loads(last["positions"]))
+    assert rep3["equity"] == last["equity"]
 
 
 def test_daily_loss_limit_trips(db):

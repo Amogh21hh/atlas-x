@@ -158,6 +158,9 @@ def cycle(db: DB, broker: Broker | None = None, force_trade: bool = False, ignor
         for o, why in rr.rejected:
             db.event("warn", "risk_reject", f"liquidation {o.side} {o.qty:g} {o.symbol}: {why}")
         report["execution"] = ex = execute(db, broker, risk, rr.approved)
+        if rr.approved:  # record the post-sale book now, not at the next cycle
+            snap = snapshot(db, broker, prices)
+            risk.update_equity(snap["equity"])
         done = not rr.rejected and all(x["status"] == "filled" for x in ex)
         if done:
             db.set("liquidate_requested", False)
